@@ -29,14 +29,3 @@ VoteButton.propTypes = {
 };
 
 export default VoteButton;
-/*
-    <div className="vote-button">
-      <div className="votes">45</div>
-      <div className="btn btn-default" onClick={onVoteUp}>
-        <Icon name="thumbs-up" />
-      </div>
-      <div className="btn btn-default" onClick={onVoteDown}>
-        <Icon name="thumbs-down" />
-      </div>
-    </div>
-*/
