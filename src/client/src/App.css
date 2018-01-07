@@ -23,25 +23,15 @@
 }
 
 .votes,
-.vote {
+.vote-block {
     display: inline-block;
 }
 
-.vote {
+.vote-block {
     display: inline-block;
     vertical-align: middle;
 }
 
-.voteDown,
-.voteUp {
+.vote {
     cursor: pointer;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }

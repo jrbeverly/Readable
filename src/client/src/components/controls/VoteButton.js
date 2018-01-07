@@ -10,12 +10,12 @@ const VoteButton = props => {
 
   return (
     <div className="votesBox">
-      <div className="vote">
-        <div className="voteUp" onClick={onVoteUp}>
+      <div className="vote-block">
+        <div className="vote" onClick={onVoteUp}>
           <Icon name="thumbs-up" />
         </div>
         {props.children}
-        <div className="voteDown" onClick={onVoteDown}>
+        <div className="vote" onClick={onVoteDown}>
           <Icon name="thumbs-down" />
         </div>
       </div>
