@@ -1,25 +1,17 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {Icon} from 'react-fa';
+import VoteButton from '../controls/VoteButton';
 
 class Post extends Component {
   render() {
-    const {post, comments, votePost} = this.props;
+    const {post} = this.props;
 
     return (
       <div>
-        <div class="input-group-btn-vertical">
-          <button class="btn btn-default" type="button">
-            <Icon name="thumbs-up" />
-          </button>
-          <button class="btn btn-default" type="button">
-            <Icon name="thumbs-down" />
-          </button>
-        </div>
+        <VoteButton>
+          <div className="votes">{post.score}</div>
+        </VoteButton>
         <h3>{post.title}</h3>
         <p>{post.body}</p>
-        <p>{post.score} votes</p>
         <p>
           <b>Category: </b> {post.category}
         </p>

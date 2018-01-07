@@ -22,9 +22,19 @@
     font-size: large;
 }
 
-.input-group-btn-vertical>.btn {
-    display: block;
-    position: relative;
+.votes,
+.vote {
+    display: inline-block;
+}
+
+.vote {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.voteDown,
+.voteUp {
+    cursor: pointer;
 }
 
 @keyframes App-logo-spin {
