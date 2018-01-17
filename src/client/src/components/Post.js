@@ -1,14 +1,19 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {toLocaleTimestamp} from 'globalization/locale';
 import {Link} from 'react-router-dom';
 import {votePost, fetchAllPosts} from 'store/post/actions';
-import {fetchCommentForPost} from 'store/comment/actions';
-import VoteButton from 'components/controls/VoteButton';
+import {fetchComments} from 'store/comment/actions';
+import VoteButton from 'components/VoteButton';
 import {Container, Row, Col} from 'react-grid-system';
 
 class Post extends Component {
+  componentDidMount() {
+    this.props.fetchComments(this.props.post.id);
+  }
+
   render() {
-    const {post} = this.props;
+    const {post, comments, votePost, fetchAllPosts} = this.props;
 
     return (
       <div>
@@ -17,16 +22,25 @@ class Post extends Component {
             <Container fluid style={{lineHeight: '32px', width: '40%'}}>
               <Row>
                 <Col md={1}>
-                  <div className="post-likes">
-                    <VoteButton onVoteUp={() => {}} onVoteDown={() => {}}>
-                      <div className="post-score">{post.voteScore}</div>
+                  <div>
+                    <VoteButton
+                      onVoteUp={() => {
+                        votePost(post.id, 'upVote');
+                        fetchAllPosts();
+                      }}
+                      onVoteDown={() => {
+                        votePost(post.id, 'downVote');
+                        fetchAllPosts();
+                      }}
+                    >
+                      <div>{post.voteScore}</div>
                     </VoteButton>
                   </div>
                 </Col>
                 <Col md={10}>
                   <Row>
                     <Link to={`/${post.category}/${post.id}`}>
-                      <div className="post-title">
+                      <div>
                         <h3>{post.title}</h3>
                       </div>
                     </Link>
@@ -39,7 +53,7 @@ class Post extends Component {
                     </Col>
                     <Col md={3}>{post.category}</Col>
                     <Col md={6}>
-                      Submitted at {post.timestamp} by {post.author}
+                      Submitted at {toLocaleTimestamp(post.timestamp)} by {post.author}
                     </Col>
                   </Row>
                 </Col>
@@ -61,4 +75,5 @@ function mapStateToProps({comments}, {post}) {
 export default connect(mapStateToProps, {
   votePost,
   fetchAllPosts,
+  fetchComments,
 })(Post);

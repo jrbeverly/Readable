@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Post from 'components/post/Post';
+import Post from 'components/Post';
 import {connect} from 'react-redux';
 import * as actions from 'store/post/actions';
 
