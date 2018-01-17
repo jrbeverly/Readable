@@ -6,7 +6,7 @@ export const fetchCategories = () => {
     Client.fetchCategories().then(res => {
       dispatch({
         type: Types.CATEGORY.READ,
-        res.categories,
+        categories: res.categories,
       });
     });
   };
