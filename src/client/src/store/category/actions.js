@@ -3,10 +3,10 @@ import * as Client from 'api/readable';
 
 export const fetchCategories = () => {
   return dispatch => {
-    Client.fetchCategories().then(res => {
+    Client.fetchCategories().then(categories => {
       dispatch({
         type: Types.CATEGORY.READ,
-        res,
+        categories,
       });
     });
   };
