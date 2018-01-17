@@ -3,7 +3,7 @@ import * as Types from 'store/types';
 function categories(state = {}, action) {
   switch (action.type) {
     case Types.CATEGORY.READ:
-      return state;
+      return action.categories;
     default:
       return state;
   }
