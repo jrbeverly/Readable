@@ -23,7 +23,9 @@ export const deleteComment = commentId => {};
 export const voteComment = (commentId, option) => {};
 
 export const addPost = post => {};
-export const fetchPosts = () => {};
+export const fetchPosts = () => {
+  return fetch(`${API}/posts`, {headers}).then(res => res.json());
+};
 export const fetchPostsByCategory = category => {};
 export const updatePost = (postId, title, body) => {};
 export const deletePost = postId => {};

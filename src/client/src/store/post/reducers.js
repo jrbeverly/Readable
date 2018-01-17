@@ -3,7 +3,7 @@ import * as Types from 'store/types';
 function posts(state = [], action) {
   switch (action.type) {
     case Types.POST.READ:
-      return state;
+    return action.posts.filter(post => !(post.deleted))
     case Types.POST.BY_CATEGORY:
       return state;
     case Types.POST.CREATE:
