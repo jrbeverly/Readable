@@ -41,8 +41,8 @@ const Comment = props => {
           </Col>
           <Col style={{display: 'left'}} md={2}>
             <div>
-              <button onClick={() => console.log('Call Edit')}>Edit</button>
-              <button onClick={() => console.log('Call Delete')}>Delete</button>
+              <Link to={`/react/${comment.parentId}/${comment.id}/edit`} onClick={() => console.log('Call Edit')}>Edit</Link>
+              <Link onClick={() => console.log('Call Delete')}>Delete</Link>
             </div>
           </Col>
         </Row>
