@@ -25,7 +25,7 @@ class App extends Component {
 
   render() {
     const {categories, sortPost} = this.props;
-
+    
     return (
       <div className="App">
         <header className="App-header">
@@ -37,7 +37,7 @@ class App extends Component {
               className="App-logo"
               alt="logo"
             />
-            <h1 className="App-title"> Readable </h1>
+            <h1 className="App-title">Readable</h1>
           </Link>
         </header>
         <div className="filters">
@@ -60,7 +60,7 @@ class App extends Component {
           <div>
             Sort By:
             <select onChange={e => sortPost(e.target.value)}>
-              <option value="none" default disabled>
+              <option value="none" default>
                 None
               </option>
               <option value="timestamp">Time</option>
