@@ -23,9 +23,10 @@ Home.propTypes = {
   posts: PropTypes.array,
 };
 
-function mapStateToProps({posts}) {
+function mapStateToProps({posts}, props) {
+  const category = props.match.params.category;
   return {
-    posts: posts,
+    posts: category ? posts.filter(post => post.category === category) : posts,
   };
 }
 
