@@ -118,7 +118,6 @@ class PostDetail extends Component {
 }
 
 function mapStateToProps({posts, comments}, props) {
-  console.log(props);
   const post = _.find(posts, {id: props.match.params.postId});
   return {
     post: post,
