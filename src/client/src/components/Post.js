@@ -19,7 +19,7 @@ class Post extends Component {
       <div>
         {post && (
           <div className="post">
-            <Container fluid style={{lineHeight: '32px', width: '40%'}}>
+            <Container fluid className="post-body">
               <Row>
                 <Col md={1}>
                   <div>
