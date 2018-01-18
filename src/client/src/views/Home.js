@@ -15,7 +15,7 @@ class Home extends Component {
 
   render() {
     const {posts} = this.props;
-    return <div>{posts.map(post => <Post key={post.id} post={post} />)}</div>;
+    return <div>{posts.map(post => <Post key={post.id} post={post} history={this.props.history} />)}</div>;
   }
 }
 

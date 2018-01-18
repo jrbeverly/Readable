@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {toLocaleTimestamp} from 'globalization/locale';
 import {Link} from 'react-router-dom';
-import {votePost, fetchAllPosts} from 'store/post/actions';
+import {votePost, fetchAllPosts, deletePost} from 'store/post/actions';
 import {fetchComments} from 'store/comment/actions';
 import VoteButton from 'components/VoteButton';
 import {Container, Row, Col} from 'react-grid-system';
@@ -12,6 +12,13 @@ class Post extends Component {
     this.props.fetchComments(this.props.post.id);
   }
 
+  onPostDelete = () => {
+    const id = this.props.post.id;
+    this.props.deletePost(id, () => {
+      this.props.history.push('/');
+    });
+  };
+
   render() {
     const {post, comments, votePost, fetchAllPosts} = this.props;
 
@@ -19,7 +26,7 @@ class Post extends Component {
       <div>
         {post && (
           <div className="post">
-            <Container fluid style={{lineHeight: '32px', width: '40%'}}>
+            <Container fluid className="post-body">
               <Row>
                 <Col md={1}>
                   <div>
@@ -53,7 +60,18 @@ class Post extends Component {
                     </Col>
                     <Col md={3}>{post.category}</Col>
                     <Col md={6}>
-                      Submitted at {toLocaleTimestamp(post.timestamp)} by {post.author}
+                      Submitted at {toLocaleTimestamp(post.timestamp)} by{' '}
+                      {post.author}
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={3}>
+                      <Link to={`/${post.category}/${post.id}/edit`}>Edit</Link>
+                    </Col>
+                    <Col md={3}>
+                      <button onClick={e => this.onPostDelete(e)}>
+                        Delete
+                      </button>
                     </Col>
                   </Row>
                 </Col>
@@ -76,4 +94,5 @@ export default connect(mapStateToProps, {
   votePost,
   fetchAllPosts,
   fetchComments,
+  deletePost,
 })(Post);

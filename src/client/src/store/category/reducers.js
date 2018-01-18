@@ -1,8 +1,8 @@
-import * as Types from 'store/types';
+import {CATEGORY} from './types';
 
 function categories(state = [], action) {
   switch (action.type) {
-    case Types.CATEGORY.READ:
+    case CATEGORY.READ:
       return action.categories;
     default:
       return state;

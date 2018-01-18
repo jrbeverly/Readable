@@ -19,6 +19,11 @@ body {
     justify-content: space-around;
 }
 
+.post-body {
+    line-height: '32px';
+    width: '40%'
+}
+
 .post {
     display: flex;
     position: left;
