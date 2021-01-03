@@ -1,0 +1,20 @@
+{
+  "slug": "Readable",
+  "namespace": "jrbeverly",
+  "status": "archived",
+  "icon": "icon.svg",
+  "license": {
+    "type": "MIT",
+    "content": "Jonathan Beverly <jrbeverly>"
+  },
+  "topics": [
+    "react",
+    "reactjs",
+    "udacity-react-nanodegree"
+  ],
+  "languages": [
+    "CSS",
+    "HTML",
+    "JavaScript"
+  ]
+}
