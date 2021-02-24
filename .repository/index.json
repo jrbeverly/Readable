@@ -1,5 +1,5 @@
 {
-  "slug": "Readable",
+  "slug": "readable",
   "namespace": "jrbeverly",
   "status": "archived",
   "icon": "icon.svg",
@@ -14,7 +14,9 @@
   ],
   "languages": [
     "CSS",
+    "Dockerfile",
     "HTML",
-    "JavaScript"
+    "JavaScript",
+    "Shell"
   ]
 }
