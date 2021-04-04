@@ -1,0 +1,16 @@
+slug: readable
+description: Udacity Nanodegree React Project.
+project: udacity
+namespace:
+status: archived
+icon: icon.svg
+license:
+  type: MIT
+  content: Jonathan Beverly <jrbeverly>
+  year: 2017
+topics: |-
+  [
+    "react",
+    "reactjs",
+    "udacity-react-nanodegree"
+  ]
